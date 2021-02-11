@@ -14,12 +14,43 @@
         <form action="{{ url('task') }}" method="POST" class="form-horizontal">
             {{ csrf_field() }}
 
+
+            <!-- Task Category -->
+            <div class="form-group">
+                <label for="task" class="col-sm-3 control-label">Category</label>
+                <div class="col-sm-6">
+                    <select name="category" id="task-category" class="form-control">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
             <!-- Task Name -->
             <div class="form-group">
                 <label for="task" class="col-sm-3 control-label">Task</label>
 
                 <div class="col-sm-6">
                     <input type="text" name="name" id="task-name" class="form-control">
+                </div>
+            </div>
+
+            <!-- Task Limit -->
+            <div class="form-group">
+                <label for="task" class="col-sm-3 control-label">Limit</label>
+
+                <div class="col-sm-6">
+                    <input type="text" name="limit" id="task-limit" class="form-control">
+                </div>
+            </div>
+
+            <!-- Task Prio -->
+            <div class="form-group">
+                <label for="task" class="col-sm-3 control-label">Prio</label>
+
+                <div class="col-sm-6">
+                    <input type="text" name="prio" id="task-prio" class="form-control">
                 </div>
             </div>
 
@@ -33,6 +64,8 @@
             </div>
         </form>
     </div>
+
+
 
     <!-- TODO: Current Tasks -->
 
@@ -59,7 +92,9 @@
                                 <td class="table-text">
                                     <div>{{ $task->name }}</div>
                                 </td>
-
+                                <td class="table-text">
+                                    <div>{{ $task->category->name }}</div>
+                                </td>
                                 <!-- Delete Button -->
     <td>
         <form action="{{ url('task/'.$task->id) }}" method="POST">
