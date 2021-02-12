@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- Bootstrap Boilerplate... -->
-
+<p><a href="/taskByCategory">Veura taskas by category</a></p>
     <div class="panel-body">
         <!-- Display Validation Errors -->
         @include('common.errors')

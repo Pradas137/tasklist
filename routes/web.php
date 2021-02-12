@@ -11,7 +11,7 @@ use App\Models\Category;
  */
 
 Route::get('/category', function () {
-    $categories = Category::orderBy('name', 'asc')->get();
+    $categories = Category::orderBy('created_at', 'asc')->get();
 
     return view('category', [
         'categories' => $categories
@@ -84,6 +84,15 @@ Route::post('/task', function (Request $request) {
  */
 Route::delete('/task/{task}', function (Task $task) {
     $task->delete();
-
     return redirect('/');
+});
+
+/*Task per Category*/
+
+Route::get('/taskByCategory', function () {
+    $cats = Category::all();
+
+    return view('taskByCategory', [
+        'cats' => $cats,
+    ]);
 });
