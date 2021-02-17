@@ -6,6 +6,8 @@
 
     <!-- Bootstrap Boilerplate... -->
 <p><a href="/taskByCategory">Veura taskas by category</a></p>
+<br>
+<p><a href="/category">add Category Page</a></p>
     <div class="panel-body">
         <!-- Display Validation Errors -->
         @include('common.errors')

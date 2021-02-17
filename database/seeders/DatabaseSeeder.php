@@ -18,19 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
-            'password' => Hash::make('password'),
-        ]);
+        $this->call([Category::class,UserSeeder::class]);
 
-        User::factory()
-        ->count(15)
-        ->hasPosts(1)
-        ->create();
-
-        $this->call([
-            UserSeeder::class,
-        ]);
     }
 }

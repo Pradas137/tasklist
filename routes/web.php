@@ -21,7 +21,7 @@ Route::get('/category', function () {
 /**
  * Add New Categories
  */
-Route::post('/categories', function (Request $request) {
+Route::post('/category', function (Request $request) {
     $validator = Validator::make($request->all(), [
         'name' => 'required|max:20',
     ]);
@@ -36,6 +36,7 @@ Route::post('/categories', function (Request $request) {
     $task->name = $request->name;
     $task->save();
 
+    return redirect('/category');
 });
 
 Route::delete('/category/{category}', function (Category $categories) {

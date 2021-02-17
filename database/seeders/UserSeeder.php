@@ -14,5 +14,13 @@ class UserSeeder extends Seeder
     public function run()
     {
         //
+         User::factory()
+        ->count(15)
+        #->hasPosts(1)
+        ->create();
+
+        $this->call([
+            UserSeeder::class,
+        ]);
     }
 }
