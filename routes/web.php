@@ -88,7 +88,7 @@ Route::delete('/task/{task}', function (Task $task) {
     return redirect('/');
 });
 
-/*Task per Category*/
+/*Task per Categorys*/
 
 Route::get('/taskByCategory', function () {
     $cats = Category::all();

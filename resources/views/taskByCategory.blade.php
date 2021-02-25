@@ -3,8 +3,7 @@
 @extends('layouts.app')
 
 @section('content')
-<p><a href="/tasks">Add Tasks Page</a></p>
-<br>
+<p><a href="/">Add Tasks Page</a></p>
 <p><a href="/category">add Category Page</a></p>
 <h1>Tasks By Category</h1>
 <hr>
